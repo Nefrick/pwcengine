@@ -1,0 +1,12 @@
+{
+  "normalStoreUrl": "http://salespwcenginecom7.mybigcommerce.com/",
+  "port": "3000",
+  "clientId": "frw8u5b9viz7jn0wzhrlsd9i8sb19md",
+  "accessToken": "8h9guc6hyngxo26q9166e6y9yduz0bm",
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {},
+    "product": {}
+  }
+}

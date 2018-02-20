@@ -1,0 +1,39 @@
+<article class="card {{#if alternate}}card--alternate{{/if}}">
+    <figure class="card-figure">
+        <a href="{{url}}">
+            <img class="card-image" src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+        </a>
+
+    </figure>
+    <div class="card-body">
+
+            <p class="card-text" data-test-info-type="productRating">
+                <span class="rating--small">
+                    {{> components/products/ratings rating=rating}}
+                </span>
+            </p>
+
+        {{#if brand.name}}
+            <p class="card-text" data-test-info-type="brandName">{{brand.name}}</p>
+        {{/if}}
+        <h4 class="card-title">
+            <a href="{{url}}">{{name}}</a>
+        </h4>
+        <div class="card-text" data-test-info-type="price">
+            {{> components/products/price price=price}}
+        </div>
+
+        <a href="{{add_to_cart_url}}" class="button button--small card-figcaption-button">{{lang 'products.add_to_cart'}}</a>
+        <label class="button button--small card-figcaption-button" for="compare-{{id}}">
+            {{lang 'products.compare'}} <input type="checkbox" name="products[]" value="{{id}}" id="compare-{{id}}" data-compare-id="{{id}}">
+        </label>
+
+        <form class="form" method="post" action="{{add_to_wishlist_url}}" data-wishlist-add>
+            <div class="form-action">
+                <input type="hidden" name="variation_id" value="">
+                <input class="button" type="submit" value="{{lang 'account.wishlists.add_item'}}">
+            </div>
+        </form>
+
+    </div>
+</article>

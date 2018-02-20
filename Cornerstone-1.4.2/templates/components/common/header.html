@@ -1,0 +1,57 @@
+<div class="banners" data-banner-location="top">
+    <div class="banner">
+        <ul>
+
+        {{#if settings.phone_number}}
+        <li class="navPages-item"><a class="navPages-action" ref="tel:+{{settings.phone_number}}">{{lang 'footer.call_us_phone' phone_number=settings.phone_number}}</a></li>
+        {{/if}}
+
+
+        <li class="navPages-item">
+            <a class="navPages-action navUser-action--quickSearch" href="#" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false">Type what you Search</a>
+        </li>
+
+        {{#if settings.gift_certificates_enabled}}
+        <li class="navPages-item">
+            <a class="navPages-action" href="{{urls.account.orders.all}}">{{lang 'account.nav.orders_status'}}</a>
+        </li>
+        <li class="navPages-item">
+            <a class="navPages-action" href="{{urls.gift_certificate.purchase}}">{{lang 'common.gift_cert'}}</a>
+        </li>
+        {{/if}}
+            
+
+        {{#if customer}}
+        <li class="navPages-item">
+            <a class="navPages-action" href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a>
+        </li>
+        <li class="navPages-item">
+            | <a class="navPages-action" href="{{urls.account.index}}">{{lang 'common.account'}}</a>
+        </li>
+        {{else}}
+        <li class="navPages-item">
+            <a class="navPages-action" href="{{urls.auth.login}}">{{lang 'common.login'}}</a>
+        </li>
+        <li class="navPages-item">
+            <a class="navPages-action" href="{{urls.auth.create_account}}">{{lang 'common.sign_up'}}</a>
+        </li>
+        {{/if}}
+
+    </ul>
+
+    </div>
+</div>
+
+<header class="header" role="banner">
+    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
+        <span class="mobileMenu-toggleIcon">Toggle menu</span>
+    </a>
+    <div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" tabindex="-1" data-prevent-quick-search-close>
+        {{> components/common/quick-search}}
+    </div>
+
+    <div class="navPages-container" id="menu" data-menu>
+        {{> components/common/navigation-menu}}
+    </div>
+
+</header>
