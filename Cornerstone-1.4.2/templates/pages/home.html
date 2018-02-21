@@ -24,15 +24,19 @@ blog:
         {{> components/common/alert-info message}}
     {{/each}}
 
-<div class="main full">
-
+<div class="sidebar">
     <ul class="products-menu">
-    {{#each categories}}
-    <li class="navPages-item">
-        {{> components/common/navigation-list}}
-    </li>
-    {{/each}}
+        {{#each categories}}
+        <li class="navPages-item">
+            {{> components/common/navigation-list}}
+        </li>
+        {{/each}}
     </ul>
+</div>
+
+
+
+<div class="main full">
 
     {{#if products.featured}}
         {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
